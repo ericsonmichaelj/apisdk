@@ -1,6 +1,6 @@
 apisdk
 ======
 
-RelateIQ Public API SDK's. Please refer to the RelateIQ API documenation page for specific integration endpoints. 
+SalesforceIQ Public API SDK's. Please refer to the SalesforceIQ API documenation page for specific integration endpoints. 
 
-https://api.relateiq.com
+https://api.salesforceiq.com
