@@ -91,7 +91,7 @@ def process_response(response) :
     response.raise_for_status()
     try:
         return response.json()
-    except ValueError, e:
+    except ValueError as e:
         return {}
 
 

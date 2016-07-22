@@ -1,4 +1,4 @@
-import client as riq
+import relateiq.client as riq
 
 class Organization(object):
     _id = None

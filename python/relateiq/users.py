@@ -1,5 +1,5 @@
-from riq_obj import RIQObject
-from riq_base import RIQBase
+from relateiq.riq_obj import RIQObject
+from relateiq.riq_base import RIQBase
 
 class User(RIQObject,RIQBase) :
     # Object Attributes

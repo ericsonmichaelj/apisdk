@@ -1,7 +1,7 @@
-from riq_obj import RIQObject
-from riq_base import RIQBase
-from listitems import ListItems
-from listitem import ListItem
+from relateiq.riq_obj import RIQObject
+from relateiq.riq_base import RIQBase
+from relateiq.listitems import ListItems
+from relateiq.listitem import ListItem
 
 # TODO: Add version, externalId, category
 # TODO: Payload exception if missing required fields
@@ -91,11 +91,13 @@ class List(RIQObject,RIQBase) :
     # Convert a field name to a field key (eg "Status" --> "0")
     def fieldKey(self,name) :
         #if the "name" is already a key, just return it
+        print('field key hit')
         for field in self.fields() :
             if field.get('id',None) == name :
                 return name
         #otherwise, find the field whose "name" is name, and return that field's id
         for field in self.fields() :
+            print(field)
             if field.get('name',None) == name :
                 return field.get('id',name)
         #print "[WARN] Field is a Linked Field and has no Schema in List: " + name

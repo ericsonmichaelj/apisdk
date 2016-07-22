@@ -1,5 +1,5 @@
-from riq_child import RIQChild
-from listitem import ListItem
+from relateiq.riq_child import RIQChild
+from relateiq.listitem import ListItem
 
 class ListItems(RIQChild) :
     _cache = []

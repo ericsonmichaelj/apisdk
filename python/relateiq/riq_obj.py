@@ -1,5 +1,5 @@
 from abc import ABCMeta, abstractmethod
-import client as riq
+import relateiq.client as riq
 import json
 
 class RIQObject(object) :

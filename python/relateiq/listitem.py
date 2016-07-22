@@ -1,4 +1,4 @@
-from riq_obj import RIQObject
+from relateiq.riq_obj import RIQObject
 
 class ListItem(RIQObject) :
     # Object Attributes
@@ -79,7 +79,7 @@ class ListItem(RIQObject) :
         fieldValues = {}
         for field,value in self.fieldValues().items() :
             valueList = []
-            if isinstance(value, basestring) :
+            if isinstance(value, str) :
                 value = [value]
             for val in value :
                 valueList.append({'raw':val})
@@ -127,7 +127,7 @@ class ListItem(RIQObject) :
 
     def contactIds(self,value=None) :
         if value != None :
-            if isinstance(value,basestring) :
+            if isinstance(value,str) :
                 self._contactIds = [value]
             else :
                 self._contactIds = value
@@ -152,11 +152,10 @@ class ListItem(RIQObject) :
         return self._fieldValues or {}
 
     def fieldValue(self,key,value=None) :
-        key = self.list().fieldKey(key)
         if self._fieldValues == None :
             self._fieldValues = {}
         if value != None :
-            #value = self.list().fieldOption(value)
+            # value = self.list().fieldOption(value)
             self._fieldValues[key] = value
         #value = self._fieldValues.get(key,None)
         return self.list().fieldValue(key, self._fieldValues.get(key,None))

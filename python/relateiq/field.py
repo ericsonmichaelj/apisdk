@@ -1,4 +1,4 @@
-from riq_obj import RIQObject
+from relateiq.riq_obj import RIQObject
 
 class Field(RIQObject) :
     # Object Attributes

@@ -1,5 +1,5 @@
 from abc import ABCMeta, abstractmethod
-import client as riq
+import relateiq.client as riq
 from requests import HTTPError
 import math
 
@@ -31,7 +31,7 @@ class RIQBase(object):
                 cls.setFetchOptions({param:','.join(chunk)})
                 # TODO : set += is not consistent with the rest of the code base
                 objects += cls.fetchPage()
-            except HTTPError, e:
+            except HTTPError as e:
                 if (e.response.status_code == 414 or e.response.status_code == 413) and maxSize > 1: #max url length is 8192 (2^13). If longer, will give a 414 error.
                     objects += cls.fetchBatch(param, chunk, int(math.ceil(maxSize/2)))
                 else:
